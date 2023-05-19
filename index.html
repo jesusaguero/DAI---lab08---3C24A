@@ -1,0 +1,56 @@
+<?php
+// Verificar si se ha enviado el formulario de inicio de sesión
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Redirigir al usuario a la página de productos
+    header("Location: producto/productos.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB 08 - CRUD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .crud-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .crud-list li {
+            margin-bottom: 10px;
+        }
+        .crud-list li a {
+            display: block;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .crud-list li a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EVALUACIÓN DE LABORATORIO 2</h1>
+        <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
